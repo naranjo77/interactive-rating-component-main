@@ -7,20 +7,26 @@ circleButton.forEach((button) => {
     })
 })
 
+
+
+
 const submitbutton = document.getElementById('buttoon');
-
-submitbutton.addEventListener('click', () => {
-    if (selectedRating) {
-     // Submit the rating value using your preferred method (e.g., AJAX, form submission)
-    console.log(`Rating submitted: ${selectedRating}`);
-    showThankYouCard();
-    } else {
-    console.log('No rating selected');
-    }
-});
-
 const thankYouCard = document.getElementById('thank-you-card');
-
 function showThankYouCard() {
     thankYouCard.style.display = 'block';
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    submitButton = document.getElementById('buttoon');
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (selectedRating) {
+        console.log('Rating submitted: ' + selectedRating);
+        thankYouCard.style.display = 'block';
+        } else {
+        console.log('No rating selected');
+        }
+    });
+});
